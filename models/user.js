@@ -25,7 +25,7 @@ const UserSchema = new Schema({
         data: Buffer,
         contentType: String
     },
-    state: {
+    status: {
         type: Boolean,
         default: true
     }

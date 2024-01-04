@@ -10,13 +10,8 @@ const ProductSchema = new Schema({
         type: String,
         trim: true
     },
-    price: {
-        type: Number,
-        trim: true,
-        required: 'Price is Required'
-    },
     category: {
-        type: Schema.Types.ObjectId,
+        type: [Schema.Types.ObjectId],
         ref: 'Category'
     },
     ingredients: {
@@ -24,14 +19,17 @@ const ProductSchema = new Schema({
         ref: 'Ingredient',
         required: true
     },
-    quantity: {
-        type: Number,
-        default: 1,
+    boxTypes: {
+        type: [Schema.Types.ObjectId],
+        ref: 'Box',
         required: true
     },
     image: {
         data: Buffer,
         contentType: String
+    },
+    imageUrl: {
+        type: String
     },
     created: {
         type: Date,
@@ -41,6 +39,11 @@ const ProductSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
+        required: true
+    },
+    status: {
+        type: Boolean,
+        default: true,
         required: true
     }
 })

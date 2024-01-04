@@ -6,7 +6,7 @@ const CategorySchema = new Schema({
         trim: true,
         required: 'Category name is Required'
     },
-    state:{
+    status:{
         type: Boolean,
         default: true,
         required: true
@@ -20,6 +20,10 @@ const CategorySchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
+    },
+    products: {
+        type: [Schema.Types.ObjectId],
+        ref: 'Product'
     }
 })
 
