@@ -18,7 +18,7 @@ require('dotenv').config();
 class VeetalyServer {
     constructor(){
         this.app = express();
-        this.port = process.env.PORT;
+        this.port = process.env.PORT || 8080;
         this.cartsPath = '/api/carts';
         this.categoriesPath = '/api/categories';
         this.ingredientsPath = '/api/ingredients';
